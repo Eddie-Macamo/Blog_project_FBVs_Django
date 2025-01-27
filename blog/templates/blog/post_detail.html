@@ -1,0 +1,8 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+<p>Autor: {{ post.author }}</p>
+<a href="{% url 'post_update' post.pk %}">Editar</a>
+<form method="POST" action="{% url 'post_delete' post.pk %}">
+    {% csrf_token %}
+    <button type="submit">Deletar</button>
+</form>
